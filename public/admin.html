@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="color-scheme" content="dark">
+<title>ToBa · Project Inbox</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/admin.css">
+</head><body>
+<header class="topbar"><div class="logo"><span class="logo-box">TB</span><span><strong>ToBa</strong><small>PRIVATE PROJECT INBOX</small></span></div><a href="/" class="back">↗ View website</a></header>
+<main class="wrap">
+<section id="login-screen" class="login-card" hidden>
+  <div class="login-icon" aria-hidden="true">✦</div>
+  <p class="eyebrow">OWNER ACCESS</p><h1>Welcome back.</h1>
+  <p class="intro">See customer project requests, email addresses, budgets and messages — all in one private dashboard.</p>
+  <form id="login-form"><label for="admin-password">Your admin password</label><input id="admin-password" type="password" name="password" autocomplete="current-password" placeholder="Enter your password" required>
+  <button class="primary full" type="submit" id="login-button">Open project inbox <span>→</span></button></form>
+  <p id="login-status" role="alert" aria-live="polite" class="status"></p>
+  <p class="hint">No registration required. The password is configured privately in Netlify.</p>
+</section>
+<section id="inbox-screen" hidden>
+  <div class="hero"><div><p class="eyebrow">TOBA / ADMIN DASHBOARD</p><h1>Project <span>enquiries.</span></h1><p class="intro">New client requests appear here after they are successfully submitted. Open their message and reply directly by email.</p></div><div class="hero-buttons"><button id="refresh" class="secondary">↻ Refresh inbox</button><button id="logout" class="logout">Log out</button></div></div>
+  <div class="stats"><div class="stat"><small>TOTAL ENQUIRIES</small><strong id="total">—</strong></div><div class="stat"><small>NEW REQUESTS</small><strong id="new">—</strong></div><div class="stat"><small>REPLIED</small><strong id="replied">—</strong></div></div>
+  <div class="inbox-head"><div><h2>Customer messages</h2><p id="sync-note" class="mini">Checking for messages…</p></div><div class="tools"><input type="search" id="search" placeholder="Search name, email or service" aria-label="Search enquiries"><select id="filter" aria-label="Filter by status"><option value="all">All statuses</option><option value="new">New</option><option value="replied">Replied</option><option value="completed">Completed</option></select><button id="export" class="secondary">↓ Export CSV</button></div></div>
+  <p id="inbox-alert" role="alert" class="alert" hidden></p>
+  <div id="messages" class="messages" aria-live="polite"></div>
+  <p class="bottom-note">The inbox refreshes every 30 seconds while this page is open. The newest 200 enquiries are shown; older ones remain stored. Keep the admin URL and password private.</p>
+</section>
+<p id="initial-status" class="loading" role="status">Loading private inbox…</p>
+</main>
+<script src="/admin.js" defer></script>
+</body></html>
